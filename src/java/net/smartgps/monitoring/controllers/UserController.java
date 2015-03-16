@@ -32,7 +32,6 @@ public class UserController implements Serializable{
     private net.smartgps.monitoring.facades.UserFacade ejbFacades;
     private List<User> users;
     private User newUser;
-    FacesContext fc = FacesContext.getCurrentInstance();
     private int failCount = 0;
     
     @PostConstruct
@@ -117,7 +116,7 @@ public class UserController implements Serializable{
     }
 
     public String logout() {
-        fc.getExternalContext().invalidateSession();
+        FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
         addMessage("До свидания!");
         entryUser = false;
         current = null;

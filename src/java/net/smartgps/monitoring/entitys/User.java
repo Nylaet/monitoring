@@ -11,6 +11,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
@@ -31,6 +32,8 @@ public class User implements Serializable {
     private boolean untc;
     @Temporal(TemporalType.DATE)
     private Date lastVisit;
+    @OneToOne
+    private Log log;
     
     public Long getId() {
         return id;
@@ -86,6 +89,14 @@ public class User implements Serializable {
 
     public void setLastVisit(Date lastVisit) {
         this.lastVisit = lastVisit;
+    }
+
+    public Log getLog() {
+        return log;
+    }
+
+    public void setLog(Log log) {
+        this.log = log;
     }
     
     
