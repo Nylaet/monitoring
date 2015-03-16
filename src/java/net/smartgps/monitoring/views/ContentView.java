@@ -39,5 +39,9 @@ public class ContentView {
         nowSelected=orders;
     }
     
+    public void setContentasNewClient(){
+        nowSelected="/resources/templates/newClient.xhtml";
+    }
+    
     
 }

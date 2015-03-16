@@ -5,7 +5,14 @@
                 xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
     <p:layout style="min-width:400px;min-height: 250px;">
         <p:layoutUnit position="north" size="40" >
-            Меню поиска и добавление нового абонента
+            <h:form><table border="0">
+                    <tr>
+                        <td>Search</td>
+                        <td>SearchFrom</td>
+                        <td><h:commandLink action="#{contentView.setNewClient()}" value="Новый клиент"/>
+                    </tr>
+                </table>
+            </h:form>>
         </p:layoutUnit>
         <p:layoutUnit position="center">
             Клиентская база
